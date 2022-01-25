@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Databse.php
  * Manage the connexion to the database
@@ -46,16 +45,9 @@ class Database
     {
         try {
             $db = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';charset=utf8', $this->user, $this->dbpassword);
-            echo "Connexion à la base OK<br>";
             return $db;
         } catch (Exception $e) {
-            echo "Conexion to the database failed";
             die('Erreur : ' . $e->getMessage());
         }
     }
 }
-
-
- $testDB = new Database();
- $testDB->setDatabase();
- $testDB->dbConnect();

@@ -18,7 +18,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                      
                         <th scope="col">Nom</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Modifier</th>
@@ -29,7 +28,6 @@
                     <?php foreach ($products as $product) {
                     ?>
                         <tr>
-                        
                             <td><?= $product['nameProduct'] ?></td>
                             <td><?= $product['stockProduct'] ?></td>
                             <td><a href="index.php?action=updateForm&amp;id=<?= $product['idProduct']?>"><button class="btn btn-primary">Modifier</button></a></td>

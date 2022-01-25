@@ -1,5 +1,3 @@
-
-
 <?php
 /**
  * home.php
@@ -7,7 +5,6 @@
  * 19/01/2022
  */
 ?>
-
 
 <?php $title = "Modifier un produit" ?>
 <?php ob_start(); ?>
@@ -36,6 +33,7 @@
             </form>
         </div>
     </div>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

@@ -1,9 +1,10 @@
 <?php
-
-
+/**
+ * index.php
+ */
 require_once('controller/ProductController.php');
 require_once('model/ProductManager.php');
-
+require_once('model/Product.php');
 
 if (isset($_GET['action'])) {
     if ($_GET['action'] === 'addForm') {
@@ -46,6 +47,11 @@ if (isset($_GET['action'])) {
                 require('views/updateProduct.php');
             }
         }
+    } elseif ($_GET['action'] === "delete") {
+        $product = new ProductManager();
+        $productManager = new ProductManager();
+        $products = $productManager->selectAllProducts();
+        require('views/home.php');
     }
 } else {
     $productManager = new ProductManager();

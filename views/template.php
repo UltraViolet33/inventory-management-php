@@ -29,7 +29,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=addForm">Ajouter un produit</a>
                     </li>
-                   
                 </ul>
             </div>
         </div>
