@@ -8,9 +8,7 @@
 
 <?php $title = "Modifier un produit" ?>
 <?php ob_start(); ?>
-<?php var_dump($product);?>
 
-<script src="public/js/validationForm.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-12">

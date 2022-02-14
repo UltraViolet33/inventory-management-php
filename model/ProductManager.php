@@ -16,19 +16,16 @@
         
         /**
          * __construct
-         *
          * @return void
          */
         public function __construct()
         {
-            
             $this->setDatabase();  
         }
         
         /**
          * selectAllProducts
-         *
-         * @return void
+         * @return array
          */
         public function selectAllProducts()
         {
@@ -40,9 +37,8 @@
         
         /**
          * getProduct
-         *
          * @param  mixed $id
-         * @return void
+         * @return array
          */
         public function getProduct($id)
         {
@@ -55,7 +51,6 @@
         
         /**
          * deleteProduct
-         *
          * @param  mixed $id
          * @return void
          */

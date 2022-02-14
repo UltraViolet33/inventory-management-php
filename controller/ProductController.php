@@ -16,50 +16,48 @@ class ProductController
 
     /**
      * insertController
-     *
-     * @param  mixed $name
-     * @param  mixed $stock
-     * @return void
+     * @param  string $name
+     * @param  int $stock
+     * @return string
      */
     public function insertController($name, $stock)
     {
         if (is_string($name) && is_int($stock)) {
-            $product = new Product($name, $stock);
 
+            $product = new Product($name, $stock);
             $insert = $product->insertProduct($name, $stock);
 
             if ($insert) {
                 return 1;
             } else {
-                return "Erreur veuillez réessayer 2";
+                return "Erreur veuillez réessayer";
             }
         } else {
-            return "Erreur veuillez réessayer 1";
+            return "Erreur veuillez réessayer";
         }
     }
 
     /**
      * updateController
-     *
-     * @param  mixed $name
-     * @param  mixed $stock
+     * @param  string $name
+     * @param  int $stock
      * @param  mixed $id
-     * @return void
+     * @return string
      */
     public function updateController($name, $stock, $id)
     {
         if (is_string($name) && is_int($stock)) {
-            $product = new Product($name, $stock);
 
+            $product = new Product($name, $stock);
             $update = $product->updateProduct($id);
 
             if ($update) {
                 return 1;
             } else {
-                return "Erreur veuillez réessayer 2";
+                return "Erreur veuillez réessayer";
             }
         } else {
-            return "Erreur veuillez réessayer 1";
+            return "Erreur veuillez réessayer";
         }
     }
 }

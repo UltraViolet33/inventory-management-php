@@ -1,5 +1,4 @@
 <?php
-
 /**
  * home.php
  * @author Ulysse Valdenaire
@@ -13,7 +12,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-
         <h1 class="text-center">Liste des produits</h1>
             <table class="table">
                 <thead>

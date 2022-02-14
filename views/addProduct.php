@@ -9,7 +9,6 @@
 <?php $title = "Ajouter un produit" ?>
 <?php ob_start(); ?>
 
-<script src="public/js/validationForm.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -34,5 +33,5 @@
     </div>
 </div>
 
-    <?php $content = ob_get_clean(); ?>
-    <?php require('template.php'); ?>
+<?php $content = ob_get_clean(); ?>
+<?php require('template.php'); ?>

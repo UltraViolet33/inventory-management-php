@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Product.php
  * Manage the product
@@ -9,7 +10,7 @@
 require_once('Database.php');
 
 /**
- * Product extends Database
+ * Class Product extends class Database
  */
 class Product extends Database
 {
@@ -21,7 +22,7 @@ class Product extends Database
      * __construct
      *
      * @param  string $name
-     * @param  string $stock
+     * @param  int $stock
      * set the database
      * @return void
      */
@@ -34,8 +35,7 @@ class Product extends Database
 
     /**
      * insertProduct
-     *
-     * @return void
+     * @return int
      */
     public function insertProduct()
     {
@@ -47,9 +47,8 @@ class Product extends Database
 
     /**
      * updateProduct
-     *
      * @param  mixed $id
-     * @return void
+     * @return int
      */
     public function updateProduct($id)
     {
@@ -60,9 +59,8 @@ class Product extends Database
 
     /**
      * deleteProduct
-     *
      * @param  mixed $id
-     * @return void
+     * @return int
      */
     public function deleteProduct($id)
     {
