@@ -1,8 +1,11 @@
 <?php
 
-/**
- * index.php
- */
+require_once './Router.php';
+
+$router = new Router();
+
+$router->resolve($_SERVER['REQUEST_URI']);
+die;
 
 require_once('controller/ProductController.php');
 require_once('model/ProductManager.php');

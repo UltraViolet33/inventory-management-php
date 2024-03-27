@@ -28,7 +28,7 @@ class Database
      * @param  string $dbpassword
      * @return void
      */
-    public function setDatabase($host="localhost", $dbname="productsgestion", $user="root", $dbpassword="root")
+    public function setDatabase($host="localhost", $dbname="products-manager", $user="root", $dbpassword="")
     {
         $this->host = $host;
         $this->dbname = $dbname;

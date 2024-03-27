@@ -26,10 +26,10 @@
                     <?php foreach ($products as $product) {
                     ?>
                         <tr>
-                            <td><?= $product['nameProduct'] ?></td>
-                            <td><?= $product['stockProduct'] ?></td>
-                            <td><a href="index.php?action=updateForm&amp;id=<?= $product['idProduct']?>"><button class="btn btn-primary">Modifier</button></a></td>
-                            <td><a href="index.php?action=delete&amp;id=<?= $product['idProduct']?>"><button class="btn btn-primary">Supprimer</button></a></td>
+                            <td><?= $product['name'] ?></td>
+                            <td><?= $product['stock_amount'] ?></td>
+                            <td><a href="index.php?action=updateForm&amp;id=<?= $product['id_product']?>"><button class="btn btn-primary">Modifier</button></a></td>
+                            <td><a href="index.php?action=delete&amp;id=<?= $product['id_product']?>"><button class="btn btn-primary">Supprimer</button></a></td>
                         </tr>
                     <?php
                     }

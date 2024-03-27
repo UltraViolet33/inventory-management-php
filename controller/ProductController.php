@@ -6,13 +6,27 @@
  * 19/01/2022
  */
 
-require_once('model/Product.php');
+// require_once('model/Product.php');
+require_once 'model/ProductManager.php';
+
 
 /**
  * ProductController
  */
 class ProductController
 {
+    private ProductManager $productManager;
+
+    public function __construct()
+    {
+        $this->productManager = new ProductManager();
+    }
+
+    public function index()
+    {
+        $products = $this->productManager->selectAllProducts();
+        require('views/home.php');
+    }
 
     /**
      * insertController
