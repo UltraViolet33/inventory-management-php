@@ -1,16 +1,5 @@
 <?php
-/**
- * Database.php
- * Manage the connexion to the database
- * @author Ulysse Valdenaire
- * 19/01/2022
- */
-?>
 
-<?php
-/**
- * Class Database
- */
 class Database
 {
     protected $host;
@@ -19,16 +8,12 @@ class Database
     protected $dbpassword;
 
 
-    /**
-     * setDatabase
-     *
-     * @param  string $host
-     * @param  string $dbname
-     * @param  string $user
-     * @param  string $dbpassword
-     * @return void
-     */
-    public function setDatabase($host="localhost", $dbname="products-manager", $user="root", $dbpassword="")
+    public function setDatabase(
+        string $host="localhost", 
+        string $dbname="products-manager", 
+        string $user="root", 
+        string $dbpassword=""
+        ): void 
     {
         $this->host = $host;
         $this->dbname = $dbname;
@@ -36,11 +21,7 @@ class Database
         $this->dbpassword = $dbpassword;
     }
 
-    /**
-     * dbConnect
-     * connexion to the database productsgestion
-     * @return object $db
-     */
+
     public function dbConnect()
     {
         try {

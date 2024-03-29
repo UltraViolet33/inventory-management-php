@@ -1,18 +1,8 @@
 <?php
-/**
- * ProductController.php
- * Controle the product
- * @author Ulysse Valdenaire
- * 19/01/2022
- */
 
-// require_once('model/Product.php');
+require_once 'model/Product.php';
 require_once 'model/ProductManager.php';
 
-
-/**
- * ProductController
- */
 class ProductController
 {
     private ProductManager $productManager;
@@ -22,10 +12,43 @@ class ProductController
         $this->productManager = new ProductManager();
     }
 
+
     public function index()
     {
         $products = $this->productManager->selectAllProducts();
-        require('views/home.php');
+        require_once 'views/home.php';
+    }
+    
+
+    public function add(): void 
+    {
+        $error = '';
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST')
+        {
+           if ($_POST['name'] && $_POST['stock'])
+           {
+               $name = $_POST['name'];
+               $stock = (int) $_POST['stock'];
+
+               $product = new Product($name, $stock);
+               if ($product->insert()) 
+               {
+                    header('Location: /');
+                    die;
+               }
+               else
+               {
+                    $error = 'Une erreur est survenue, veuillez réessayer';
+               }
+            }
+            else 
+            {
+                $error = 'Veulliez remplir tous les champs';
+            }
+        }
+
+        require_once 'views/addProduct.php';
     }
 
     /**

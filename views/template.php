@@ -1,9 +1,3 @@
-<!--
-    template.php
-    @author Ulysse Valdenaire
-    19/01/2022
--->
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -27,7 +21,7 @@
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?action=addForm">Ajouter un produit</a>
+                        <a class="nav-link" href="/product/add">Ajouter un produit</a>
                     </li>
                 </ul>
             </div>
@@ -36,7 +30,7 @@
 
     <?= $content ?>
 
-    <script src="public/js/validationForm.js"></script>
+    <!-- <script src="../public/js/validationForm.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 </body>

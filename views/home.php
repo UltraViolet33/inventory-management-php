@@ -1,13 +1,5 @@
-<?php
-/**
- * home.php
- * @author Ulysse Valdenaire
- * 19/01/2022
- */
-?>
-
-<?php $title = "Accueil" ?>
-<?php ob_start(); ?>
+<?php $title = "Accueil";
+ob_start(); ?>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -23,22 +15,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($products as $product) {
-                    ?>
+                    <?php foreach ($products as $product): ?>
                         <tr>
                             <td><?= $product['name'] ?></td>
                             <td><?= $product['stock_amount'] ?></td>
                             <td><a href="index.php?action=updateForm&amp;id=<?= $product['id_product']?>"><button class="btn btn-primary">Modifier</button></a></td>
                             <td><a href="index.php?action=delete&amp;id=<?= $product['id_product']?>"><button class="btn btn-primary">Supprimer</button></a></td>
                         </tr>
-                    <?php
-                    }
-                    ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-
-<?php $content = ob_get_clean(); ?>
-<?php require('template.php'); ?>
+<?php $content = ob_get_clean(); 
+require_once 'template.php'; ?>

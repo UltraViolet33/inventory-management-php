@@ -1,48 +1,22 @@
 <?php
 
-/**
- * Product.php
- * Manage the product
- * @author Ulysse Valdenaire
- * 19/01/2022
- */
+require_once 'Database.php';
 
-require_once('Database.php');
 
-/**
- * Class Product extends class Database
- */
 class Product extends Database
 {
 
-    private $name;
-    private $stock;
-
-    /**
-     * __construct
-     *
-     * @param  string $name
-     * @param  int $stock
-     * set the database
-     * @return void
-     */
-    public function __construct($name, $stock)
+    public function __construct(private string $name, private int $stock)
     {
-        $this->name = $name;
-        $this->stock = $stock;
         $this->setDatabase();
     }
 
-    /**
-     * insertProduct
-     * @return int
-     */
-    public function insertProduct()
+
+    public function insert(): bool
     {
-        $product = $this->dbConnect()->prepare('INSERT INTO products(nameProduct, stockProduct)
+        $product = $this->dbConnect()->prepare('INSERT INTO products(name, stock_amount)
             VALUES(?, ?)');
-        $affectedLines = $product->execute(array($this->name, $this->stock));
-        return $affectedLines;
+        return $product->execute(array($this->name, $this->stock));
     }
 
     /**
