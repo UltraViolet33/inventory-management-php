@@ -18,18 +18,13 @@ class ProductManager extends Database
         return $result->fetchAll();
     }
     
-    /**
-     * getProduct
-     * @param  mixed $id
-     * @return array
-     */
-    public function getProduct($id)
+
+    public function getProduct(int $id): array 
     {
         $db = $this->dbConnect();
-        $product = $db->prepare('SELECT * FROM products WHERE idProduct = ?');
+        $product = $db->prepare('SELECT * FROM products WHERE id_product = ?');
         $product->execute(array($id));
-        $result = $product->fetch();
-        return $result;
+        return $product->fetch();
     }
     
     /**

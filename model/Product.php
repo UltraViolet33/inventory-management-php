@@ -19,16 +19,11 @@ class Product extends Database
         return $product->execute(array($this->name, $this->stock));
     }
 
-    /**
-     * updateProduct
-     * @param  mixed $id
-     * @return int
-     */
-    public function updateProduct($id)
+
+    public function update(int $id): bool
     {
-        $product = $this->dbConnect()->prepare('UPDATE products SET nameProduct = ?, stockProduct = ? WHERE idProduct = ?');
-        $affectedLines = $product->execute(array($this->name, $this->stock, $id));
-        return $affectedLines;
+        $request = $this->dbConnect()->prepare('UPDATE products SET name = ?, stock_amount = ? WHERE id_product = ?');
+        return $request->execute(array($this->name, $this->stock, $id));
     }
 
     /**

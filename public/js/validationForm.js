@@ -1,3 +1,9 @@
+/**
+ * checknameAndstock
+ * check if the name input is filled
+ * check if the name input is filled
+ * return bool
+ */
 function form() {
     let form = document.getElementById('form');
     let name = form.name.value;

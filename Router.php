@@ -3,7 +3,7 @@
 
 class Router
 {
-    public function resolve(string $request_uri): void 
+    public function resolve(string $request_uri): void
     {
         $controller = 'product';
         $action = 'index';
@@ -18,6 +18,11 @@ class Router
 
             if (count($uri_explode) > 2 && !empty($uri_explode[2])) {
                 $action = $uri_explode[2];
+                if (str_contains($uri_explode[2], '?')) {
+                    $action = explode('?', $uri_explode[2])[0];
+                    $params = explode('?', $uri_explode[2])[1];
+                    [$param_name, $param_value] = explode('=', $params);
+                }
             }
         }
 
@@ -31,6 +36,9 @@ class Router
         
         if (method_exists($controller, $action)) {
              call_user_func_array([$controller_class, $action], []);
+             die;
         }
+
+        echo '404';
     }
 }
