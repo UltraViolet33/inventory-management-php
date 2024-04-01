@@ -27,15 +27,10 @@ class ProductManager extends Database
         return $product->fetch();
     }
     
-    /**
-     * deleteProduct
-     * @param  mixed $id
-     * @return void
-     */
-    public function deleteProduct($id)
+
+    public function deleteProduct(int $id): bool 
     {
-        $req = $this->dbConnect()->prepare('DELETE FROM products WHERE idProduct = ?');
-        $affectedLines = $req->execute(array($id));
-        return $affectedLines;
+        $req = $this->dbConnect()->prepare('DELETE FROM products WHERE id_product = ?');
+        return $req->execute(array($id));
     }
 }

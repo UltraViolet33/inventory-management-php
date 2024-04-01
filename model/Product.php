@@ -25,16 +25,4 @@ class Product extends Database
         $request = $this->dbConnect()->prepare('UPDATE products SET name = ?, stock_amount = ? WHERE id_product = ?');
         return $request->execute(array($this->name, $this->stock, $id));
     }
-
-    /**
-     * deleteProduct
-     * @param  mixed $id
-     * @return int
-     */
-    public function deleteProduct($id)
-    {
-        $req = $this->dbConnect()->prepare('DELETE * FROM products WHERE idProduct = ?');
-        $affectedLines = $req->execute(array($id));
-        return $affectedLines;
-    }
 }

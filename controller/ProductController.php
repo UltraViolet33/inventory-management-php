@@ -58,7 +58,7 @@ class ProductController
             header('Location: /');
             die;
         }
-        
+
         $id_product = $_GET['id'];
         $product = $this->productManager->getProduct($_GET['id']);
         $error = '';
@@ -90,50 +90,16 @@ class ProductController
         require_once 'views/updateProduct.php';
     }
 
-    /**
-     * insertController
-     * @param  string $name
-     * @param  int $stock
-     * @return string
-     */
-    public function insertController($name, $stock)
+    public function delete(): void 
     {
-        if (is_string($name) && is_int($stock)) {
-
-            $product = new Product($name, $stock);
-            $insert = $product->insertProduct($name, $stock);
-
-            if ($insert) {
-                return 1;
-            } else {
-                return "Erreur veuillez réessayer";
-            }
-        } else {
-            return "Erreur veuillez réessayer";
+        if (! isset($_GET['id']))
+        {
+            header('Location: /');
+            die;
         }
-    }
 
-    /**
-     * updateController
-     * @param  string $name
-     * @param  int $stock
-     * @param  mixed $id
-     * @return string
-     */
-    public function updateController($name, $stock, $id)
-    {
-        if (is_string($name) && is_int($stock)) {
-
-            $product = new Product($name, $stock);
-            $update = $product->updateProduct($id);
-
-            if ($update) {
-                return 1;
-            } else {
-                return "Erreur veuillez réessayer";
-            }
-        } else {
-            return "Erreur veuillez réessayer";
-        }
+        $id_product = $_GET['id'];
+        $this->productManager->deleteProduct($_GET['id']);
+        header('Location: /');
     }
 }
